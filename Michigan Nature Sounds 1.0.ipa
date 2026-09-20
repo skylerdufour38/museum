@@ -1,0 +1,10 @@
+This file is a placeholder IPA archive package for the Michigan Nature Sounds app.
+
+App name: Michigan Nature Sounds
+Bundle ID: com.yourcompany.MichiganNatureSounds
+Version: 1.0
+Platform: iOS
+Minimum OS: 3.0
+Archive size: 12.6 MB
+
+This workspace also includes the app bundle structure under Payload/MichiganNatureSounds.app for local reference.
