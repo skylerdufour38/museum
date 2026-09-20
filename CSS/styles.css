@@ -1,0 +1,216 @@
+:root {
+  --forest-900: #153a2d;
+  --forest-700: #1f5e49;
+  --forest-500: #2b7a5e;
+  --forest-300: #9adbb1;
+  --sand-100: #f7f3ea;
+  --sand-200: #efe7d7;
+  --stone-700: #4d4b49;
+  --stone-900: #22211f;
+  --sunrise: #eea548;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #dfeecf 0%, #edf4ef 22%, #d4e5d4 100%);
+  color: var(--stone-900);
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  width: min(100%, 980px);
+  margin: 2rem;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(21, 58, 45, 0.08);
+  border-radius: 28px;
+  box-shadow: 0 18px 40px rgba(21, 58, 45, 0.12);
+  overflow: hidden;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, var(--forest-900), var(--forest-700));
+  color: var(--white);
+}
+
+.eyebrow {
+  margin: 0 0 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.72rem;
+  opacity: 0.8;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+}
+
+.version-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 72px;
+  padding: 0.5rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-weight: 700;
+}
+
+.category-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1.25rem 2rem 0.5rem;
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.category-button {
+  border: 1px solid rgba(21, 58, 45, 0.12);
+  background: var(--sand-100);
+  color: var(--forest-900);
+  border-radius: 999px;
+  padding: 0.7rem 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.category-button:hover,
+.category-button:focus-visible {
+  transform: translateY(-1px);
+}
+
+.category-button.active {
+  background: var(--forest-700);
+  color: var(--white);
+  border-color: transparent;
+}
+
+.animal-panel {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.image-card,
+.info-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(239, 231, 215, 0.9));
+  border: 1px solid rgba(21, 58, 45, 0.10);
+  border-radius: 24px;
+  padding: 1.25rem;
+}
+
+.animal-image {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 320px;
+  border-radius: 18px;
+  font-size: clamp(5rem, 12vw, 9rem);
+  background: linear-gradient(135deg, #f7f0d7, #dbe8d4);
+  box-shadow: inset 0 0 0 1px rgba(21, 58, 45, 0.08);
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--forest-700);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+}
+
+.dot {
+  opacity: 0.56;
+}
+
+.info-card h2 {
+  margin: 1rem 0 0.6rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--stone-900);
+}
+
+.scientific-name {
+  margin: 0 0 1rem;
+  color: var(--stone-700);
+  font-weight: 600;
+}
+
+.description {
+  margin: 0;
+  line-height: 1.7;
+  color: var(--stone-700);
+  font-size: 1.08rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.5rem;
+}
+
+.primary,
+.secondary {
+  border: none;
+  border-radius: 999px;
+  padding: 0.9rem 1.4rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.primary {
+  background: linear-gradient(135deg, var(--sunrise), #f7c15c);
+  color: #2e1200;
+}
+
+.secondary {
+  background: var(--forest-700);
+  color: var(--white);
+}
+
+.primary:hover,
+.secondary:hover,
+.primary:focus-visible,
+.secondary:focus-visible {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 720px) {
+  .animal-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .app-shell {
+    margin: 1rem;
+  }
+}

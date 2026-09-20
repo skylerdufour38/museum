@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Michigan Nature Sounds</title>
+    <link rel="stylesheet" href="../CSS/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">Michigan Wildlife</p>
+          <h1>Michigan Nature Sounds</h1>
+        </div>
+        <span class="version-badge">v1.0</span>
+      </header>
+
+      <nav class="category-bar" aria-label="Animal categories">
+        <button class="category-button active" type="button" data-category="All">All</button>
+        <button class="category-button" type="button" data-category="Mammals">Mammals</button>
+        <button class="category-button" type="button" data-category="Birds">Birds</button>
+        <button class="category-button" type="button" data-category="Insects">Insects</button>
+      </nav>
+
+      <main class="animal-panel" aria-live="polite">
+        <section class="image-card">
+          <div id="animalImage" class="animal-image" aria-label="Animal image">🐺</div>
+        </section>
+
+        <section class="info-card">
+          <div class="meta-row">
+            <span id="animalCategory" class="animal-category">Mammals</span>
+            <span class="dot">•</span>
+            <span>Michigan</span>
+          </div>
+
+          <h2 id="animalName">Gray Wolf</h2>
+          <p class="scientific-name">
+            Scientific Name: <span id="animalScientific">Canis lupus</span>
+          </p>
+
+          <p id="animalDescription" class="description">
+            The gray wolf is Michigan’s largest native land predator. It typically lives in packs and has a strong, distinctive howl.
+          </p>
+
+          <div class="actions">
+            <button id="playSound" class="primary" type="button">Play Sound</button>
+            <button id="nextAnimal" class="secondary" type="button">Next Animal</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="../JavaScript/script.js"></script>
+  </body>
+</html>
